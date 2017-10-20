@@ -15,10 +15,10 @@ import static com.ibm.watson.developer_cloud.language_translator.v2.util.Languag
 
 
 /**
- * Servlet implementation class SimpleServlet
+ * Servlet implementation class MySimpleTestServlet
  */
-@WebServlet("/SimpleServlet")
-public class SimpleServlet extends HttpServlet {
+@WebServlet("/MySimpleTestServlet")
+public class MySimpleTestServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
