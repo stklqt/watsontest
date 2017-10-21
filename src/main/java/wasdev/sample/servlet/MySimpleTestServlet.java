@@ -16,9 +16,10 @@ import static com.ibm.watson.developer_cloud.language_translator.v2.util.Languag
 
 /**
  * Servlet implementation class MySimpleTestServlet
+ * //FIXME Deplyment doesnt Work at BlueMix Environment. Reason unknown :-(
  */
-@WebServlet("/MySimpleTestServlet")
-public class MySimpleTestServlet extends HttpServlet {
+@WebServlet("/SimpleServlet")
+public class SimpleServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -28,7 +29,6 @@ public class MySimpleTestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         response.getWriter().print(translateToGerman("This is a really great test"));
-        throw new RuntimeException();
     }
 
     private String translateToGerman(String text) {
@@ -37,7 +37,7 @@ public class MySimpleTestServlet extends HttpServlet {
         TranslateOptions translateOptions = null;
         translateOptions.newBuilder().addText(text).source(ENGLISH).target(GERMAN).build();
 
-        service.setUsernameAndPassword("77b8b56c-b9ca-4275-98e7-1d26a490c341", "B4msnYxH6IDW");  //FIXME
+        service.setUsernameAndPassword(<username>, <password>);  //FIXME
         TranslationResult translationResult = service.translate(translateOptions).execute();
         return translationResult.getTranslations().get(0).toString();
     }

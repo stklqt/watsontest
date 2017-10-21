@@ -2,7 +2,7 @@
 
 // request message on server
 //Calls SimpleServlet to get the "Hello World" message
-xhrGet("MySimpleTestServlet", function(responseText){
+xhrGet("SimpleServlet", function(responseText){
 	// add to document
 	var mytitle = document.getElementById('message');
 	mytitle.innerHTML = responseText;
